@@ -1,0 +1,6 @@
+tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
+pase_abordar,1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
+pase_abordar,2,reserva_id,bigint,bigint,,19.0,NO,,MUL,,
+pase_abordar,3,codigo,varchar(255),varchar,255.0,,YES,,UNI,,
+pase_abordar,4,emitido_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
+pase_abordar,5,valido,tinyint(1),tinyint,,3.0,YES,1,,,

@@ -1,0 +1,6 @@
+tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
+puerta,1,id,int,int,,10.0,NO,,PRI,auto_increment,
+puerta,2,terminal_id,int,int,,10.0,NO,,MUL,,
+puerta,3,identificador,varchar(20),varchar,20.0,,NO,,,,
+puerta,4,estado,varchar(20),varchar,20.0,,YES,Libre,,,
+puerta,5,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

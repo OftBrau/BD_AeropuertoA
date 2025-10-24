@@ -1,0 +1,8 @@
+tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
+evento_embarque,1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
+evento_embarque,2,pase_abordar_id,bigint,bigint,,19.0,NO,,MUL,,
+evento_embarque,3,usuario_id,int,int,,10.0,NO,,MUL,,
+evento_embarque,4,puerta_id,int,int,,10.0,NO,,,,
+evento_embarque,5,ts_evento,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
+evento_embarque,6,resultado,varchar(20),varchar,20.0,,NO,,,,
+evento_embarque,7,observacion,varchar(255),varchar,255.0,,YES,,,,

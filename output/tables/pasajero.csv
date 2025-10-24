@@ -1,0 +1,8 @@
+tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
+pasajero,1,id,int,int,,10.0,NO,,PRI,auto_increment,
+pasajero,2,nombre,varchar(80),varchar,80.0,,NO,,,,
+pasajero,3,apellido,varchar(80),varchar,80.0,,NO,,,,
+pasajero,4,documento,varchar(50),varchar,50.0,,YES,,,,
+pasajero,5,email,varchar(150),varchar,150.0,,YES,,,,
+pasajero,6,telefono,varchar(30),varchar,30.0,,YES,,,,
+pasajero,7,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

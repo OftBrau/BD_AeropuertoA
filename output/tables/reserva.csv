@@ -1,0 +1,9 @@
+tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
+reserva,1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
+reserva,2,pnr,varchar(20),varchar,20.0,,NO,,MUL,,
+reserva,3,pasajero_id,int,int,,10.0,NO,,MUL,,
+reserva,4,vuelo_id,int,int,,10.0,NO,,MUL,,
+reserva,5,asiento,varchar(6),varchar,6.0,,YES,,,,
+reserva,6,estado_reserva,varchar(20),varchar,20.0,,YES,Confirmada,,,
+reserva,7,fecha_reserva,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
+reserva,8,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

@@ -1,0 +1,4 @@
+tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
+terminal,1,id,int,int,,10.0,NO,,PRI,auto_increment,
+terminal,2,nombre,varchar(50),varchar,50.0,,NO,,,,
+terminal,3,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
