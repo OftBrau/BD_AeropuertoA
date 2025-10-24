@@ -1,0 +1,4 @@
+id,pase_abordar_id,usuario_id,puerta_id,ts_evento,resultado,observacion
+2000,1000,1,1,2025-10-24 15:00:00,OK,Embarque normal
+2001,1001,1,1,2025-10-24 15:02:00,OK,Pasajero con equipaje para mano
+2002,1002,1,1,2025-10-24 15:05:00,OK,Embarque finalizado

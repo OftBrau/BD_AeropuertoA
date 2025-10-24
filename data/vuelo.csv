@@ -1,0 +1,4 @@
+id,numero_vuelo,fecha,salida_programada,llegada_programada,estado,aerolinea_id,aeronave_id,puerta_id,origen_iata,destino_iata,capacidad_pasajeros
+1,LAT2205,2025-10-24,2025-10-24 15:30:00,2025-10-24 17:00:00,Programado,1,1,1,LIM,CUZ,180
+2,AV1234,2025-10-24,2025-10-24 16:00:00,2025-10-24 18:00:00,En Vuelo,2,2,2,LIM,ARE,220
+3,AD900,2025-10-25,2025-10-25 09:00:00,2025-10-25 10:30:00,Programado,3,3,3,LIM,CUZ,100

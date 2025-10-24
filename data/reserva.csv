@@ -1,0 +1,4 @@
+id,pnr,pasajero_id,vuelo_id,asiento,estado_reserva,fecha_reserva
+100,PNR001,1,1,12A,Confirmada,2025-10-01 10:00:00
+101,PNR002,2,1,12B,Confirmada,2025-10-02 11:00:00
+102,PNR003,3,1,13A,Confirmada,2025-10-03 09:30:00

@@ -1,0 +1,6 @@
+id,quien,entidad,entidad_id,accion,detalles,ts
+1,sistema,reserva,1,INSERT,Reserva importada desde Excel/CSV,2025-10-01 10:00:00
+2,sistema,reserva,2,INSERT,Reserva importada desde Excel/CSV,2025-10-02 11:00:00
+3,sistema,reserva,3,INSERT,Reserva importada desde Excel/CSV,2025-10-03 09:30:00
+4,usuario_admin,equipaje,9002,MARCAR,Equipaje marcado como cargado,2025-10-24 12:16:00
+5,sistema,pase_abordar,1000,EMITIR,Pase emitido por check-in automatizado,2025-10-24 14:30:00

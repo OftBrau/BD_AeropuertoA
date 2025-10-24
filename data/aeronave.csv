@@ -1,0 +1,4 @@
+id,matricula,modelo,capacidad_pasajeros,estado
+1,OB-1234,Airbus A320,180,Activo
+2,OB-5678,Boeing 737-800,220,Activo
+3,OB-9999,Embraer 190,100,Mantenimiento

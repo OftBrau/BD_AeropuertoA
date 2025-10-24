@@ -1,0 +1,4 @@
+id,tag,reserva_id,vuelo_id,estado,creado_en
+9001,TAG001,1,1,Registrado,2025-10-24 12:10:00
+9002,TAG002,2,1,Cargado,2025-10-24 12:15:00
+9003,TAG003,3,1,Registrado,2025-10-24 12:20:00
