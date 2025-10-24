@@ -49,5 +49,3 @@ id,nombre,apellido,documento,email,telefono
 48,Nicolás,Villanueva,24567890,nicolas.villanueva@example.com,+51960000048 
 49,Lorena,Campos,24678901,lorena.campos@example.com,+51960000049 
 50,Enrique,Garrido,24789012,enrique.garrido@example.com,+51960000050
-51,cintia,Muñoz,24789013,citia.muñoz@cepesito.com,+51969696969
-52,tysson,Muñoz,24789014,citia.muñoz@cielo.com,+51967573665
