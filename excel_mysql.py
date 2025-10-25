@@ -1,25 +1,7 @@
-#!/usr/bin/env python3
-"""
-excel_mysql.py
-
-Versión actualizada: filtra automáticamente las columnas que no existen en la tabla
-antes de realizar INSERT/UPDATE. Esto evita errores como "Unknown column 'origen_iata'"
-cuando los CSV contienen columnas adicionales que no están en el esquema actual.
-
-Mantiene el flujo:
- - lectura de CSV/Excel en data/
- - inserción/merge de maestros y reservas (staging)
- - upsert (insert/update) en tablas opcionales
- - manejo de filas inválidas guardadas en data/*.csv
-
-Uso:
-  python excel_mysql.py
-"""
 import os
 import sys
 import time
 import logging
-import re
 import pandas as pd
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
@@ -56,9 +38,6 @@ engine = create_engine(
     pool_pre_ping=True,
     pool_recycle=3600
 )
-
-# Cache global de columnas por tabla para evitar consultas repetidas
-TABLE_COLS_CACHE = {}
 
 def read_sheet_or_csv(name, sheet_name=None):
     csv_path = CSV_FILES.get(name)
@@ -110,63 +89,32 @@ def _to_bool_safe(val):
         return False
     return None
 
-def get_table_columns(conn, table_name):
-    """
-    Devuelve un set con los nombres de columna de table_name en la BD (cacheado).
-    """
-    if table_name in TABLE_COLS_CACHE:
-        return TABLE_COLS_CACHE[table_name]
-    rows = conn.execute(text(
-        "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = :schema AND TABLE_NAME = :table"
-    ), {"schema": DB_NAME, "table": table_name}).fetchall()
-    cols = {r[0] for r in rows}
-    TABLE_COLS_CACHE[table_name] = cols
-    return cols
-
 def insert_row_if_missing(conn, table, row, pk='id'):
     """
     Inserta row (dict) en table solo si no existe id = row[pk].
-    Filtra automáticamente las claves del dict que no existen en la tabla.
     Si id no provisto, inserta sin id (auto_increment).
-    Retorna True si insertó, False si ya existía o no hubo columnas válidas.
+    Retorna True si insertó, False si ya existía o no hubo columnas.
     """
-    # Normalizar valores (pandas NaN -> None)
     row = {k: (None if pd.isna(v) else v) for k, v in row.items()}
-
-    # obtener columnas reales de la tabla (cache)
-    table_cols = get_table_columns(conn, table)
-
-    # si la PK está en row, intentar int-safe
     if pk in row:
         row[pk] = _to_int_safe(row[pk])
-
-    # Filtrar sólo columnas que realmente existen en la tabla y no son None
-    filtered = {k: v for k, v in row.items() if k in table_cols and v is not None}
-
-    # Advertir si el row contenía columnas que no están en la tabla
-    extra_cols = [k for k in row.keys() if k not in table_cols]
-    if extra_cols:
-        log.debug("Fila contiene columnas no existentes en '%s' y serán ignoradas: %s", table, extra_cols)
-
-    if pk not in filtered:
-        # No trae id, insertar con las columnas disponibles (si hay)
-        if not filtered:
+    cols_nonnull = {k: v for k, v in row.items() if v is not None}
+    if pk not in cols_nonnull:
+        if not cols_nonnull:
             return False
-        cols = list(filtered.keys())
-        vals = {c: filtered[c] for c in cols}
+        cols = list(cols_nonnull.keys())
+        vals = {c: cols_nonnull[c] for c in cols}
         cols_sql = ", ".join(cols)
         placeholders = ", ".join([f":{c}" for c in cols])
         sql = f"INSERT INTO {table} ({cols_sql}) VALUES ({placeholders})"
         conn.execute(text(sql), vals)
         return True
     else:
-        # trae id: comprobar existencia
-        exists = conn.execute(text(f"SELECT 1 FROM {table} WHERE {pk} = :id LIMIT 1"), {"id": filtered[pk]}).fetchone()
+        exists = conn.execute(text(f"SELECT 1 FROM {table} WHERE id = :id LIMIT 1"), {"id": cols_nonnull[pk]}).fetchone()
         if exists:
             return False
-        # insertar incluyendo id (si id está en filtered)
-        cols = list(filtered.keys())
-        vals = {c: filtered[c] for c in cols}
+        cols = list(cols_nonnull.keys())
+        vals = {c: cols_nonnull[c] for c in cols}
         cols_sql = ", ".join(cols)
         placeholders = ", ".join([f":{c}" for c in cols])
         sql = f"INSERT INTO {table} ({cols_sql}) VALUES ({placeholders})"
@@ -197,7 +145,7 @@ def load_optional_table(conn, table_name, df, fk_checks):
     skipped = 0
     invalid_rows = []
 
-    # cache de ids existentes por tabla para evitar queries repetidas
+    # cache de ids existentes por tabla para evitar consultas repetidas
     fk_cache = {}
     def exists_in(table, id_):
         if id_ is None:
@@ -213,9 +161,6 @@ def load_optional_table(conn, table_name, df, fk_checks):
             return False
         res = conn.execute(text(f"SELECT 1 FROM {table_name} WHERE id = :id LIMIT 1"), {"id": id_}).fetchone()
         return bool(res)
-
-    # obtener columnas reales de la tabla destino para filtrar updates/inserts
-    table_cols = get_table_columns(conn, table_name)
 
     for _, r in df.iterrows():
         row = r.to_dict()
@@ -250,7 +195,7 @@ def load_optional_table(conn, table_name, df, fk_checks):
             id_val = _to_int_safe(row.get('id')) if 'id' in row else None
             if id_val is not None and exists_in_dest(id_val):
                 # construir SQL de UPDATE con las columnas disponibles (excluir id)
-                cols = [k for k in row.keys() if k != 'id' and row[k] is not None and k in table_cols]
+                cols = [k for k in row.keys() if k != 'id' and row[k] is not None]
                 if not cols:
                     skipped += 1
                     continue
@@ -262,7 +207,6 @@ def load_optional_table(conn, table_name, df, fk_checks):
                 updated += 1
             else:
                 # insert (si trae id pero no existe, insertará con ese id)
-                # insert_row_if_missing ya filtra columnas existentes
                 if insert_row_if_missing(conn, table_name, row, pk='id'):
                     inserted += 1
                 else:
