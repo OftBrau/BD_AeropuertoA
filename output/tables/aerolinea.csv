@@ -1,5 +1,5 @@
-tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
-aerolinea,1,id,int,int,,10.0,NO,,PRI,auto_increment,
-aerolinea,2,nombre,varchar(150),varchar,150.0,,NO,,,,
-aerolinea,3,codigo_iata,varchar(3),varchar,3.0,,YES,,,,
-aerolinea,4,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
+posicion,columna,tipo_completo,tipo_dato,long_max,precision_num,permite_null,valor_default,tipo_clave,extra,comentario
+1,id,int,int,,10.0,NO,,PRI,auto_increment,
+2,nombre,varchar(80),varchar,80.0,,NO,,,,
+3,codigo_iata,char(3),char,3.0,,NO,,UNI,,
+4,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

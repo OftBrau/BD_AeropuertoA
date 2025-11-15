@@ -1,0 +1,8 @@
+posicion,columna,tipo_completo,tipo_dato,long_max,precision_num,permite_null,valor_default,tipo_clave,extra,comentario
+1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
+2,vuelo_id,int,int,,10.0,NO,,MUL,,
+3,ticket_aereo_id,bigint,bigint,,19.0,NO,,MUL,,
+4,puerta_id,int,int,,10.0,NO,,MUL,,
+5,hora_embarque,datetime,datetime,,,NO,,,,
+6,estado,varchar(30),varchar,30.0,,NO,OK,,,
+7,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

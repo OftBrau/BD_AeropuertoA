@@ -1,8 +1,8 @@
-tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
-log_cambios,1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
-log_cambios,2,quien,varchar(100),varchar,100.0,,YES,,,,
-log_cambios,3,entidad,varchar(50),varchar,50.0,,YES,,MUL,,
-log_cambios,4,entidad_id,bigint,bigint,,19.0,YES,,,,
-log_cambios,5,accion,varchar(20),varchar,20.0,,YES,,,,
-log_cambios,6,detalles,text,text,65535.0,,YES,,,,
-log_cambios,7,ts,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
+posicion,columna,tipo_completo,tipo_dato,long_max,precision_num,permite_null,valor_default,tipo_clave,extra,comentario
+1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
+2,quien,varchar(100),varchar,100.0,,NO,,,,
+3,que,varchar(50),varchar,50.0,,NO,,MUL,,
+4,entidad_id,bigint,bigint,,19.0,NO,,,,
+5,accion,varchar(20),varchar,20.0,,NO,,,,
+6,detalles,text,text,65535.0,,YES,,,,
+7,ts,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

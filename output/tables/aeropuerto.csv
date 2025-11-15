@@ -1,8 +1,7 @@
 posicion,columna,tipo_completo,tipo_dato,long_max,precision_num,permite_null,valor_default,tipo_clave,extra,comentario
 1,id,int,int,,10.0,NO,,PRI,auto_increment,
-2,ridaficial,varchar(20),varchar,20.0,,NO,,UNI,,
-3,modelo,varchar(80),varchar,80.0,,NO,,,,
-4,capacidad_pasajeros,int,int,,10.0,NO,,,,
-5,estado,varchar(30),varchar,30.0,,NO,OPERATIVA,,,
+2,codigo_iata,char(3),char,3.0,,NO,,UNI,,
+3,nombre,varchar(150),varchar,150.0,,NO,,,,
+4,ciudad,varchar(100),varchar,100.0,,NO,,,,
+5,pais,varchar(100),varchar,100.0,,NO,,,,
 6,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
-7,aerolinea_id,int,int,,10.0,NO,,MUL,,

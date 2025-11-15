@@ -1,7 +1,7 @@
-tabla,pos,columna,column_type,data_type,max_len,num_precision,is_nullable,default,key,extra,comment
-equipaje,1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
-equipaje,2,tag,varchar(50),varchar,50.0,,NO,,UNI,,
-equipaje,3,reserva_id,bigint,bigint,,19.0,NO,,MUL,,
-equipaje,4,vuelo_id,int,int,,10.0,NO,,MUL,,
-equipaje,5,estado,varchar(30),varchar,30.0,,YES,Registrado,,,
-equipaje,6,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,
+posicion,columna,tipo_completo,tipo_dato,long_max,precision_num,permite_null,valor_default,tipo_clave,extra,comentario
+1,id,bigint,bigint,,19.0,NO,,PRI,auto_increment,
+2,tag,varchar(20),varchar,20.0,,NO,,UNI,,
+3,ticket_aereo_id,bigint,bigint,,19.0,NO,,MUL,,
+4,vuelo_id,int,int,,10.0,NO,,MUL,,
+5,estado,varchar(30),varchar,30.0,,NO,REGISTRADO,,,
+6,creado_en,datetime,datetime,,,NO,CURRENT_TIMESTAMP,,DEFAULT_GENERATED,

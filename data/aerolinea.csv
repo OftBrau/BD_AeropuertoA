@@ -1,4 +1,50 @@
 id,nombre,codigo_iata
-1,LATAM,LA
-2,Avianca,AV
-3,Andino Air,AD
+1,American Airlines,AA
+2,Delta Air Lines,DL
+3,United Airlines,UA
+4,Air France,AF
+5,KLM,KL
+6,Lufthansa,LH
+7,Iberia,IB
+8,Air Europa,UX
+9,British Airways,BA
+10,ITA Airways,AZ
+11,Swiss,LX
+12,Austrian,OS
+13,Turkish Airlines,TK
+14,Qatar Airways,QR
+15,Emirates,EK
+16,Etihad Airways,EY
+17,Saudia,SV
+18,Ethiopian,ET
+19,Qantas,QF
+20,Air New Zealand,NZ
+21,Japan Airlines,JL
+22,ANA,NH
+23,Korean Air,KE
+24,Cathay Pacific,CX
+25,Singapore Airlines,SQ
+26,Aeroméxico,AM
+27,LATAM,LA
+28,Avianca,AV
+29,Copa Airlines,CM
+30,GOL,G3
+31,Aerolíneas Argentinas,AR
+32,Sky Airline,H2
+33,VivaAerobus,5Z
+34,Vueling,VY
+35,Norwegian,DY
+36,Wizz Air,W6
+37,easyJet,U2
+38,Ryanair,FR
+39,JetBlue,B6
+40,Frontier,F9
+41,WestJet,WS
+42,Spirit,NK
+43,Virgin Australia,VA
+44,Virgin Atlantic,VS
+45,TAP Air Portugal,TP
+46,Brussels Airlines,SN
+47,SAS,SK
+48,LOT Polish,LO
+49,Czech Airlines,OK

@@ -1,0 +1,47 @@
+id,codigo_iata,nombre,ciudad,pais
+1,EZE,Aeropuerto Internacional de Buenos Aires,Buenos Aires,Argentina
+2,AEP,Aeropuerto Internacional de Buenos Aires,Buenos Aires,Argentina
+3,SCL,Aeropuerto Internacional de Santiago,Santiago,Chile
+4,LIM,Aeropuerto Internacional de Lima,Lima,Perú
+5,BOG,Aeropuerto Internacional de Bogotá,Bogotá,Colombia
+6,MEX,Aeropuerto Internacional de Ciudad de México,Ciudad de México,México
+7,MTY,Aeropuerto Internacional de Monterrey,Monterrey,México
+8,GDL,Aeropuerto Internacional de Guadalajara,Guadalajara,México
+9,UIO,Aeropuerto Internacional de Quito,Quito,Ecuador
+10,GYE,Aeropuerto Internacional de Guayaquil,Guayaquil,Ecuador
+11,LPB,Aeropuerto Internacional de La Paz,La Paz,Bolivia
+12,VVI,Aeropuerto Internacional de Santa Cruz,Santa Cruz,Bolivia
+13,ASU,Aeropuerto Internacional de Asunción,Asunción,Paraguay
+14,MVD,Aeropuerto Internacional de Montevideo,Montevideo,Uruguay
+15,MAD,Aeropuerto Internacional de Madrid,Madrid,España
+16,BCN,Aeropuerto Internacional de Barcelona,Barcelona,España
+17,VLC,Aeropuerto Internacional de Valencia,Valencia,España
+18,SVQ,Aeropuerto Internacional de Sevilla,Sevilla,España
+19,LIS,Aeropuerto Internacional de Lisboa,Lisboa,Portugal
+20,OPO,Aeropuerto Internacional de Porto,Porto,Portugal
+21,CDG,Aeropuerto Internacional de París,París,Francia
+22,ORY,Aeropuerto Internacional de París,París,Francia
+23,FRA,Aeropuerto Internacional de Frankfurt,Frankfurt,Alemania
+24,MUC,Aeropuerto Internacional de Múnich,Múnich,Alemania
+25,ROM,Aeropuerto Internacional de Roma,Roma,Italia
+26,MXP,Aeropuerto Internacional de Milán,Milán,Italia
+27,LHR,Aeropuerto Internacional de Londres,Londres,Reino Unido
+28,LGW,Aeropuerto Internacional de Londres,Londres,Reino Unido
+29,JFK,Aeropuerto Internacional de Nueva York,Nueva York,EE.UU.
+30,MIA,Aeropuerto Internacional de Miami,Miami,EE.UU.
+31,LAX,Aeropuerto Internacional de Los Ángeles,Los Ángeles,EE.UU.
+32,DFW,Aeropuerto Internacional de Dallas,Dallas,EE.UU.
+33,IAH,Aeropuerto Internacional de Houston,Houston,EE.UU.
+34,YYZ,Aeropuerto Internacional de Toronto,Toronto,Canadá
+35,YVR,Aeropuerto Internacional de Vancouver,Vancouver,Canadá
+36,AMS,Aeropuerto Internacional de Ámsterdam,Ámsterdam,Países Bajos
+37,IST,Aeropuerto Internacional de Estambul,Estambul,Turquía
+38,DOH,Aeropuerto Internacional de Doha,Doha,Qatar
+39,DXB,Aeropuerto Internacional de Dubái,Dubái,Emiratos Árabes
+40,NRT,Aeropuerto Internacional de Tokio,Tokio,Japón
+41,HND,Aeropuerto Internacional de Tokio,Tokio,Japón
+42,ICN,Aeropuerto Internacional de Seúl,Seúl,Corea del Sur
+43,SYD,Aeropuerto Internacional de Sídney,Sídney,Australia
+44,MEL,Aeropuerto Internacional de Melbourne,Melbourne,Australia
+45,AKL,Aeropuerto Internacional de Auckland,Auckland,Nueva Zelanda
+46,WLG,Aeropuerto Internacional de Wellington,Wellington,Nueva Zelanda
