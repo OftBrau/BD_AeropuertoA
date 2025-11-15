@@ -2,3 +2,4 @@ id,terminal_id,identificador,estado
 1,1,T1-G01,Libre
 2,1,T1-G02,Asignada
 3,2,T2-G12,Embarcando
+4,2,T3-G23,Libre
